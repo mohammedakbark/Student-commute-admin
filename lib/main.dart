@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:student_commute_admin/const.dart';
 import 'package:student_commute_admin/controller/admin_controller.dart';
 import 'package:student_commute_admin/view/aboutus.dart';
+import 'package:student_commute_admin/view/add_fare.dart';
 import 'package:student_commute_admin/view/buses.dart';
 import 'package:student_commute_admin/view/complaint.dart';
 import 'package:student_commute_admin/view/feredetails.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: DEFAULT_BLUE_DARK),
           useMaterial3: true,
         ),
-        home: FarDetails(),
+        home: AddFareDetails(),
       ),
     );
   }

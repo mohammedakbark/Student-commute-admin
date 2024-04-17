@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:student_commute_admin/const.dart';
 import 'package:student_commute_admin/utils/style.dart';
+import 'package:student_commute_admin/view/aboutus.dart';
+import 'package:student_commute_admin/view/add_fare.dart';
+import 'package:student_commute_admin/view/buses.dart';
+import 'package:student_commute_admin/view/complaint.dart';
+import 'package:student_commute_admin/view/feredetails.dart';
+import 'package:student_commute_admin/view/notification.dart';
+import 'package:student_commute_admin/view/schedule.dart';
 
 class CustomeDrawer extends StatelessWidget {
   const CustomeDrawer({super.key});
@@ -28,13 +35,13 @@ class CustomeDrawer extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _tile("Buses", "", context),
-                _tile("Schedule", "", context),
-                _tile("Add Fare", "", context),
-                _tile("View Fare", "", context),
-                _tile("Notification", "", context),
-                _tile("Complaints", "", context),
-                _tile("About Us", "", context),
+                _tile("Buses", const Buses(), context),
+                _tile("Schedule", const Schedule(), context),
+                _tile("Add Fare", const AddFareDetails(), context),
+                _tile("View Fare", const FarDetails(), context),
+                _tile("Notification", const Notifications(), context),
+                _tile("Complaints", const Complaints(), context),
+                _tile("About Us", const AboutUs(), context),
               ],
             ),
           ),
@@ -46,9 +53,9 @@ class CustomeDrawer extends StatelessWidget {
   Widget _tile(title, route, context) {
     return InkWell(
       onTap: () {
-        // Navigator.of(context).push(MaterialPageRoute(
-        //   builder: (context) => route,
-        // ));
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => route,
+        ));
       },
       child: ListTile(
         minLeadingWidth: 20,
